@@ -1,0 +1,188 @@
+/* Mantemos apenas os estilos específicos que não estão no global.css */
+.navbar-custom {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .nav-link {
+    transition: color 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #007bff !important;
+}
+
+.user-title {
+    font-size: 3.5rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid #f8f9fa;
+    border-radius: 10px;
+}
+
+.tech-icon {
+    background-color: #464646;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.1);
+    background-color: #b3b3b3;
+}
+
+.tech-icon img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 45px;
+    object-fit: contain;
+}
+
+.project-card {
+    position: relative;
+    min-height: 400px;
+}
+
+.project-text {
+    background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.15) 100%,
+            rgba(255, 255, 255, 0.18) 13%,
+            rgba(255, 255, 255, 0.20) 24%,
+            rgba(255, 255, 255, 0.22) 30%,
+            rgba(255, 255, 255, 0.20) 40%,
+            rgba(255, 255, 255, 0.18) 50%,
+            rgba(255, 255, 255, 0.15) 60%,
+            rgba(255, 255, 255, 0.12) 70%,
+            rgba(255, 255, 255, 0.08) 80%,
+            rgba(255, 255, 255, 0.05) 90%,
+            rgba(4, 24, 42, 0) 100%
+        );
+    padding: 2rem;
+    min-height: 200px;
+    backdrop-filter: blur(1px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-text-right {
+    background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
+        linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0.15) 100%,
+            rgba(255, 255, 255, 0.18) 13%,
+            rgba(255, 255, 255, 0.20) 24%,
+            rgba(255, 255, 255, 0.22) 30%,
+            rgba(255, 255, 255, 0.20) 40%,
+            rgba(255, 255, 255, 0.18) 50%,
+            rgba(255, 255, 255, 0.15) 60%,
+            rgba(255, 255, 255, 0.12) 70%,
+            rgba(255, 255, 255, 0.08) 80%,
+            rgba(255, 255, 255, 0.05) 90%,
+            rgba(4, 24, 42, 0) 100%
+        );
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+}
+
+.project-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.profile-img {
+    position: relative;
+    width: 300px;
+}
+
+.profile-img::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 119, 255, 0.6), transparent);
+    filter: blur(15px);
+    z-index: -1;
+    transform: scale(0.95);
+    border-radius: 50%;
+}
+
+.contact-card {
+    border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(230, 230, 230, 0.507);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: invert(1);
+}
+
+.divider {
+    height: 2px;
+    background-color: #ffffff85;
+    margin: 5rem auto;
+    width: 90%;
+}
+
+.section-title-decoration {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title-decoration::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 2px;
+    background-color: #075f88;
+}
+
+.contact-text{
+    font-weight: 700;
+}
+
+.title-section{
+    margin-bottom: 150px;
+    font-size: 110px !important;
+}
