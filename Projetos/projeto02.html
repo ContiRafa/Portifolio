@@ -67,7 +67,7 @@
 
     <section class="sectionPRJ1">
         <div class="container-carrosel">
-            <div id="carouselSlowTransition" class="carousel slide carousel-slow-transition h-100">
+            <div id="carousel1" class="carousel slide h-100">
                 <div class="carousel-inner h-100">
                     <div class="carousel-item active h-100">
                         <img src="../imgs/imagensProjeto/prj02/TELA DE LOGIN 01.png" class="d-block w-100 h-100">
@@ -78,26 +78,12 @@
                     <div class="carousel-item h-100">
                         <img src="../imgs/imagensProjeto/prj02/TELA CHAMADOS 03.png" class="d-block w-100 h-100">
                     </div>
-                    <div class="carousel-item h-100">
-                        <img src="../imgs/imagensProjeto/prj02/TELA USUARIOS FORA 04.png" class="d-block w-100 h-100">
-                    </div>
-                    <div class="carousel-item h-100">
-                        <img src="../imgs/imagensProjeto/prj02/CHAMADO DENTRO PT 01 05.png" class="d-block w-100 h-100">
-                    </div>
-                    <div class="carousel-item h-100">
-                        <img src="../imgs/imagensProjeto/prj02/CHAMADOS DENTRO PT 02 06.png"
-                            class="d-block w-100 h-100">
-                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlowTransition"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselSlowTransition"
-                    data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
                 </button>
             </div>
         </div>
@@ -177,41 +163,30 @@
                     enquanto a equipe de suporte tem visibilidade completa para resolver as demandas.
                 </p>
             </div>
-            <div class="container-carrosel" style="margin-top: 50px;">
-                <div id="carouselSlowTransition" class="carousel slide carousel-slow-transition h-100">
-                    <div class="carousel-inner h-100">
-                        <div class="carousel-item active h-100">
-                            <img src="../imgs/imagensProjeto/prj02/TELA DE LOGIN 01.png" class="d-block w-100 h-100">
+            <!-- Segundo Carrossel -->
+            
+                <div class="container-carrosel">
+                    <div id="carousel2" class="carousel slide h-100">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="../imgs/imagensProjeto/prj02/TELA USUARIOS FORA 04.png" class="d-block w-100 h-100">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="../imgs/imagensProjeto/prj02/CHAMADO DENTRO PT 01 05.png" class="d-block w-100 h-100">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="../imgs/imagensProjeto/prj02/CHAMADOS DENTRO PT 02 06.png" class="d-block w-100 h-100">
+                            </div>
                         </div>
-                        <div class="carousel-item h-100">
-                            <img src="../imgs/imagensProjeto/prj02/TELA INICIAL 02.png" class="d-block w-100 h-100">
-                        </div>
-                        <div class="carousel-item h-100">
-                            <img src="../imgs/imagensProjeto/prj02/TELA CHAMADOS 03.png" class="d-block w-100 h-100">
-                        </div>
-                        <div class="carousel-item h-100">
-                            <img src="../imgs/imagensProjeto/prj02/TELA USUARIOS FORA 04.png" class="d-block w-100 h-100">
-                        </div>
-                        <div class="carousel-item h-100">
-                            <img src="../imgs/imagensProjeto/prj02/CHAMADO DENTRO PT 01 05.png" class="d-block w-100 h-100">
-                        </div>
-                        <div class="carousel-item h-100">
-                            <img src="../imgs/imagensProjeto/prj02/CHAMADOS DENTRO PT 02 06.png"
-                                class="d-block w-100 h-100">
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlowTransition"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSlowTransition"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    
-                    </button>
                 </div>
-            </div>
+            </section>
         </div>
     </section>
 
@@ -265,13 +240,16 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Inicialização personalizada do carrossel
+        // Inicialização dos carrosséis
         document.addEventListener('DOMContentLoaded', function () {
-            var myCarousel = document.getElementById('carouselSlowTransition');
-            var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 5000, // 5 segundos (mais razoável que 1 segundo)
+            var carousel1 = new bootstrap.Carousel(document.getElementById('carousel1'), {
+                interval: 5000,
                 wrap: true
-                // remova pause: false para permitir pausa ao passar o mouse
+            });
+
+            var carousel2 = new bootstrap.Carousel(document.getElementById('carousel2'), {
+                interval: 5000,
+                wrap: true
             });
         });
     </script>
