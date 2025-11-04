@@ -1,241 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Fontes -->
+    <title>Missão Secreta: Boneca de Automemória 💌</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;1,300&display=swap"
-        rel="stylesheet">
-    <!-- <link rel="stylesheet" href="global.css"> -->
-    <link rel="stylesheet" href="root.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaQuery.css">
-    <link rel="stylesheet" href="teste.css">
-    <title>Portfólio - Rafael Contieri</title>
-    <style>
-        /* Estilos personalizados */
-    </style>
 </head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-principal">
+    
+    <div class="container text-center p-4 p-md-5 bg-card text-escuro shadow-lg rounded-3 animavel">
+        
+        <div id="tela-inicial">
+            <h1 class="text-destaque mb-4 animate__fadeInDown">Teste de Nível Otaku: Desbloqueie a Recompensa!</h1>
+            <p class="lead text-principal">Para descobrir o plano de amanhã, você deve provar seu conhecimento sobre Violet Evergarden. Pressione "Iniciar Missão"!</p>
+            <button id="iniciar-missao" class="btn btn-destaque btn-lg mt-3 bounce">Iniciar Missão!</button>
+        </div>
 
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link nav-font" href="index.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-font" href="#section2">TECNOLOGIAS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-font" href="#section03">PROJETOS</a>
-                    </li>
-                </ul>
-                <div class="menu d-flex gap-3">
-                    <a href="https://github.com/ContiRafa" target="_blank" class="nav-link">
-                        <img src="./imgs/github (1) 1.png" alt="GitHub" width="32">
-                    </a>
-                    <a href="https://www.instagram.com/contierii__/" target="_blank" class="nav-link">
-                        <img src="./imgs/logotipo-do-instagram.png" alt="Email" width="32">
-                    </a>
-                    <a href="https://www.linkedin.com/in/rafael-contieri-691380339/" target="_blank" class="nav-link">
-                        <img src="./imgs/logotipo-do-linkedin 1.png" alt="LinkedIn" width="32">
-                    </a>
+        <div id="quiz-area" class="oculto animavel">
+            <h2 id="quiz-titulo" class="text-destaque mb-4">Pergunta <span id="pergunta-numero">1</span>/5</h2>
+            <p id="pergunta-texto" class="fs-4 mb-4 text-principal"></p>
+            
+            <div id="opcoes-resposta" class="d-grid gap-3 mx-auto" style="max-width: 400px;">
                 </div>
+            
+            <div id="feedback" class="mt-4 fs-5 fw-bold text-principal"></div>
+        </div>
+        
+        <div id="resultados-finais" class="oculto animavel p-4">
+            <h2 class="text-destaque mb-4">Revisão da Missão</h2>
+            <p id="acertos-feedback" class="fs-4 text-principal mb-3"></p>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped text-start table-anime mx-auto" style="max-width: 600px;">
+                    <thead>
+                        <tr class="table-header-anime">
+                            <th scope="col">#</th>
+                            <th scope="col">Pergunta</th>
+                            <th scope="col">Sua Resposta</th>
+                            <th scope="col">Resposta Correta</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-resultados">
+                        </tbody>
+                </table>
+            </div>
+
+            <button id="ver-surpresa" class="btn btn-destaque btn-lg mt-4 bounce">VER SURPRESA</button>
+        </div>
+
+        <div id="mensagem-recompensa" class="oculto mt-5 p-4 ticket-bg animavel">
+            <div class="ticket-header text-center mb-3">
+                <h2 class="text-white fs-4 fw-bold mb-0">INGRESSO VIP - SESSÃO ESPECIAL</h2>
+            </div>
+            <div class="ticket-body p-3">
+                <p class="fs-1 fw-bolder text-destaque mb-2">🥳 ADOROOO VOCÊ! 🎉</p>
+                <p class="fs-4 text-destaque mb-1">***MISSÃO CONCLUÍDA!***</p>
+                
+                <hr class="border-secondary my-3">
+
+                <div class="row text-start fs-5">
+                    <div class="col-12 mb-2 text-principal">
+                        <strong>ATRAÇÃO:</strong> Maratona de Anime Exclusiva! 🎬
+                    </div>
+                    <div class="col-12 mb-2 text-principal">
+                        <strong>ANIME:</strong> VOCÊ SABE QUAL É....
+                    </div>
+                    <div class="col-12 mb-2 text-principal">
+                        <strong>DATA:</strong> Terça-feira, 04/11/2025
+                    </div>
+                    <div class="col-12 mb-2 text-principal">
+                        <strong>HORÁRIO:</strong> SURPRESA! (Chegue preparada para a noite!) ⏰
+                    </div>
+                    <div class="col-12 mb-2 text-principal">
+                        <strong>LOCAL:</strong> Minha Casa - Pitangueiras/SP 🏠
+                    </div>
+                    <div class="col-12 mb-2 text-principal">
+                        <strong>ASSENTO:</strong> AQUELE LUGARZINHO HEHEHEHEHd
+                    </div>
+                </div>
+                
+                <hr class="border-secondary my-3">
+                
+                <p class="fs-4 text-destaque mt-3">Apresente este "ingresso" para seu namorado!</p>
             </div>
         </div>
-    </nav>
-
-    <!-- Seção 01 - Sobre -->
-    <section class="section" id="section01">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="user-title">RAFAEL CONTIERI</h1>
-                    <p class="mt-4 me-lg-5">
-                        Desenvolvedor Web autodidata em formação, atuando na área há mais de um ano e meio, transformo
-                        ideias em projetos digitais funcionais, unindo tecnologias modernas para criar soluções que
-                        equilibram
-                        usabilidade e desempenho.
-                    </p>
-                </div>
-                <div class="col-lg-5 text-center mt-5 mt-lg-0">
-                    <div class="profile-img">
-                        <img src="imgs/Mask group.png" alt="Rafael Contieri" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 02 - Tecnologias -->
-    <section class="section" id="section2">
-        <div class="container">
-            <h2 class="text-center section-title section-title-decoration">TECNOLOGIAS TRABALHADAS</h2>
-            <div class="tech-icons">
-                <div class="tech-icon">
-                    <img src="./imgs/icones/Rectangle 14.png" alt="Tecnologia 1">
-                </div>
-                <div class="tech-icon">
-                    <img src="./imgs/icones/Rectangle 16.png" alt="Tecnologia 2">
-                </div>
-                <div class="tech-icon">
-                    <img src="./imgs/icones/Rectangle 7.png" alt="Tecnologia 3">
-                </div>
-                <div class="tech-icon">
-                    <img src="./imgs/icones/Rectangle 1.png" alt="Tecnologia 4">
-                </div>
-                <div class="tech-icon">
-                    <img src="./imgs/icones/Rectangle 15.png" alt="Tecnologia 5">
-                </div>
-                <div class="tech-icon">
-                    <img src="./imgs/icones/php 1 (1).png" alt="PHP">
-                </div>
-                <div class="tech-icon">
-                    <img src="./imgs/icones/servidor-sql.png" alt="SQL">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 03 - Projeto 1 -->
-    <section class="section" id="section03">
-        <div class="container">
-            <div class="title-section">
-                <h1 style="display: flex; justify-content: center;" class="mb-4 section-title-decoration">PROJETOS
-                    REALIZADOS</h1>
-            </div>
-            <div class="project-card row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="mb-4">SISTEMA DE CANTINA E-COMMERCE</h2>
-                    <div class="project-text">
-                        <p>
-                            O sistema da cantina é uma plataforma completa que funciona como e-commerce,
-                            permitindo que os clientes façam pedidos online de forma rápida e prática. Além disso, conta
-                            com um sistema de
-                            gerenciamento de estoque, que controla automaticamente a entrada e saída de produtos,
-                            evitando
-                            faltas ou excessos. O sistema também possui um PDV (Ponto de Venda) integrado, ideal para
-                            vendas
-                            presenciais, agilizando o atendimento e registrando todas as transações em tempo real. Essa
-                            integração garante mais organização, eficiência e controle total das operações da cantina,
-                            tanto
-                            no ambiente virtual quanto físico.
-                        </p>
-                    </div>
-
-                </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                    <img src="imgs/imagensProjeto/prj01/home01.png" alt="Sistema de Cantina" class="project-img">
-                    <div class="text-center mt-3">
-                        <a href="./Projetos/projeto01.html" class="btn btn-link">VER MAIS SOBRE O PROJETO</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 04 - Projeto 2 -->
-    <section class="section" id="section04">
-        <div class="container">
-            <div class="project-card row align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <h2 class="titleProj01 mb-4 text-lg-end">SISTEMA DE CHAMADOS HELP DESK</h2>
-                    <div class="project-text project-text-right text-lg-end">
-                        <p>
-                            Sistema de helpdesk corporativo desenvolvido em React para gestão de chamados técnicos.
-                            Interface intuitiva permite registrar, acompanhar e resolver solicitações. Autenticação via
-                            JWT garante segurança no acesso. Painel administrativo monitora chamados em tempo real com
-                            filtros por status. Inclui priorização de tarefas e categorização por departamento. Mantém
-                            histórico completo de todas as interações. Gera métricas de desempenho para análise da
-                            equipe. Otimiza fluxos de atendimento e aumenta produtividade. Solução completa para
-                            ambientes corporativos.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0 order-lg-1">
-                    <img src="imgs/helpDesk.png" alt="Sistema Help Desk" class="project-img">
-                    <div class="text-center mt-3">
-                        <a href="./Projetos/projeto02.html" class="btn btn-link">VER MAIS SOBRE O PROJETO</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <h2 class="text-center text-white section-title-decoration mb-5">CONTATO</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-5">
-                <a href="https://github.com/ContiRafa" target="_blank" class="text-decoration-none">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <img src="imgs/github (1) 1.png" alt="GitHub">
-                        </div>
-                        <div class="contact-text text-white">
-                            GITHUB
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.instagram.com/contierii__/" target="_blank" class="text-decoration-none">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <img src="imgs/logotipo-do-instagram.png" alt="Email">
-                        </div>
-                        <div class="contact-text text-white">
-                            INSTAGRAM
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/rafael-contieri-691380339/" target="_blank"
-                    class="text-decoration-none">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <img src="imgs/logotipo-do-linkedin 1.png" alt="LinkedIn">
-                        </div>
-                        <div class="contact-text text-white">
-                            LINKEDIN
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <div class="py-4 text-center text-white">
-        <p class="mb-0">&copy; 2025 Contieri. Todos os direitos reservados.</p>
+        
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Garante que o scroll suave funcione mesmo em navegadores antigos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80, // Ajuste para a navbar
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

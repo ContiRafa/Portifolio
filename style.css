@@ -1,188 +1,196 @@
-/* Mantemos apenas os estilos específicos que não estão no global.css */
-.navbar-custom {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* ==================================== */
+/* PALETA DE CORES E FONTES */
+/* ==================================== */
+:root {
+    /* Cores */
+    --fundo-principal: #1C1C1C; /* Fundo do Body (Escuro) */
+    --fundo-card: #FFFFFF; /* Fundo do Container (Branco) */
+    --texto-principal: #1C1C1C; /* Texto principal do quiz/card (Preto) */
+    --destaque-roxo: #800080; /* Roxo Escuro (80%) */
+    --destaque-claro: #A020F0; /* Roxo mais claro para feedback e hover */
+    --sucesso: #4CAF50; /* Verde para acerto */
+    --erro: #FF5733; /* Vermelho/Laranja para erro */
+    
+    /* Fontes */
+    --font-titulo: 'Righteous', cursive;
+    --font-corpo: 'Open Sans', sans-serif;
 }
 
-.navbar-custom .nav-link {
-    transition: color 0.3s;
+/* Aplicando as fontes */
+body {
+    font-family: var(--font-corpo);
 }
 
-.navbar-custom .nav-link:hover {
-    color: #007bff !important;
+h1, h2, .ticket-header h2 {
+    font-family: var(--font-titulo);
 }
 
-.user-title {
-    font-size: 3.5rem;
+/* Aplicando os fundos */
+.bg-principal {
+    background-color: var(--fundo-principal) !important; 
 }
 
-.section {
-    padding: 5rem 0;
+.bg-card {
+    background-color: var(--fundo-card) !important; 
 }
 
-.section-title {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+/* Classes de texto */
+.text-principal, p, h1, h2 {
+    color: var(--texto-principal) !important;
 }
 
-.tech-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    padding: 2rem;
-    border: 1px solid #f8f9fa;
-    border-radius: 10px;
+.text-destaque {
+    color: var(--destaque-roxo) !important;
 }
 
-.tech-icon {
-    background-color: #464646;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+/* Botão de Destaque (Iniciar Missão / Ver Surpresa) */
+.btn-destaque {
+    background-color: var(--destaque-roxo);
+    border-color: var(--destaque-roxo);
+    color: #FFFFFF; 
+    transition: background-color 0.3s;
 }
 
-.tech-icon:hover {
-    transform: scale(1.1);
-    background-color: #b3b3b3;
+.btn-destaque:hover {
+    background-color: var(--destaque-claro);
+    border-color: var(--destaque-claro);
 }
 
-.tech-icon img {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 45px;
-    object-fit: contain;
+/* Botões de Opção do Quiz */
+.btn-outline-dark {
+    color: var(--texto-principal); 
+    border-color: var(--destaque-roxo);
+    background-color: transparent;
 }
 
-.project-card {
-    position: relative;
-    min-height: 400px;
+.btn-outline-dark:hover {
+    background-color: var(--destaque-roxo);
+    color: #FFFFFF; 
 }
 
-.project-text {
-    background-image: 
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
-        linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0.15) 100%,
-            rgba(255, 255, 255, 0.18) 13%,
-            rgba(255, 255, 255, 0.20) 24%,
-            rgba(255, 255, 255, 0.22) 30%,
-            rgba(255, 255, 255, 0.20) 40%,
-            rgba(255, 255, 255, 0.18) 50%,
-            rgba(255, 255, 255, 0.15) 60%,
-            rgba(255, 255, 255, 0.12) 70%,
-            rgba(255, 255, 255, 0.08) 80%,
-            rgba(255, 255, 255, 0.05) 90%,
-            rgba(4, 24, 42, 0) 100%
-        );
-    padding: 2rem;
-    min-height: 200px;
-    backdrop-filter: blur(1px);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+/* Feedback de Resposta */
+.text-success {
+    color: var(--sucesso) !important;
+}
+.text-danger {
+    color: var(--erro) !important;
+}
+.text-info {
+    color: var(--destaque-claro) !important;
 }
 
-.project-text-right {
-    background-image: 
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
-        linear-gradient(
-            to left,
-            rgba(255, 255, 255, 0.15) 100%,
-            rgba(255, 255, 255, 0.18) 13%,
-            rgba(255, 255, 255, 0.20) 24%,
-            rgba(255, 255, 255, 0.22) 30%,
-            rgba(255, 255, 255, 0.20) 40%,
-            rgba(255, 255, 255, 0.18) 50%,
-            rgba(255, 255, 255, 0.15) 60%,
-            rgba(255, 255, 255, 0.12) 70%,
-            rgba(255, 255, 255, 0.08) 80%,
-            rgba(255, 255, 255, 0.05) 90%,
-            rgba(4, 24, 42, 0) 100%
-        );
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-left: none;
+/* ==================================== */
+/* ESTILOS DA TABELA DE REVISÃO */
+/* ==================================== */
+
+.table-anime {
+    color: var(--texto-principal) !important; 
+    border-color: var(--destaque-roxo) !important;
 }
 
-.project-img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+.table-header-anime {
+    background-color: var(--destaque-roxo) !important;
+    color: var(--fundo-card) !important; 
+    border-color: var(--destaque-roxo) !important;
 }
 
-.profile-img {
-    position: relative;
-    width: 300px;
+.table-danger-anime {
+    background-color: #ffe0e0 !important; /* Vermelho muito claro */
 }
 
-.profile-img::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(0, 119, 255, 0.6), transparent);
-    filter: blur(15px);
-    z-index: -1;
-    transform: scale(0.95);
-    border-radius: 50%;
+.table-success-anime {
+    background-color: #e6ffe6 !important; /* Verde muito claro */
 }
 
-.contact-card {
-    border-radius: 10px;
-    padding: 1rem;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.3s ease;
-    background-color: rgba(230, 230, 230, 0.507);
+.table-danger-anime td, .table-success-anime td {
+    color: var(--texto-principal) !important;
 }
 
-.contact-card:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.2);
+
+/* ==================================== */
+/* ESTILOS DO BILHETE VIP */
+/* ==================================== */
+
+.ticket-bg {
+    background-color: var(--fundo-card) !important; 
+    border: 3px dashed var(--destaque-roxo) !important; 
+    border-radius: 15px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 0 !important; 
+    overflow: hidden; 
 }
 
-.contact-icon img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    filter: invert(1);
+.ticket-header {
+    background-color: var(--destaque-roxo); 
+    color: #FFFFFF; 
+    padding: 10px 0;
+    border-bottom: 2px solid var(--destaque-claro); 
 }
 
-.divider {
-    height: 2px;
-    background-color: #ffffff85;
-    margin: 5rem auto;
-    width: 90%;
+.ticket-body {
+    background-color: var(--fundo-card); 
+    color: var(--texto-principal); 
+    padding: 20px;
 }
 
-.section-title-decoration {
-    position: relative;
-    padding-bottom: 10px;
+.ticket-body p, .ticket-body strong, .ticket-body div {
+    color: var(--texto-principal) !important;
 }
 
-.section-title-decoration::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
-    height: 2px;
-    background-color: #075f88;
+.ticket-bg hr {
+    border-top: 1px dashed var(--destaque-claro); 
 }
 
-.contact-text{
-    font-weight: 700;
+/* ==================================== */
+/* ANIMAÇÕES CSS */
+/* ==================================== */
+
+.oculto {
+    display: none;
+    opacity: 0;
 }
 
-.title-section{
-    margin-bottom: 150px;
-    font-size: 110px !important;
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-in {
+    display: block !important;
+    animation: fadeInScale 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
+}
+
+.bounce {
+    animation: bounce 2s infinite; 
+}
+
+.btn-resposta {
+    transition: background-color 0.2s, transform 0.1s;
+    text-align: left; 
+    white-space: normal; 
+    height: auto;
+    min-height: 50px;
+}
+
+.btn-resposta:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px var(--destaque-roxo); 
 }
